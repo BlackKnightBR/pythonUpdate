@@ -278,3 +278,477 @@ print('The elements in y are of type:', y.dtype)
 
 # When loading an array from a file, make sure you include the name of the file
 # together with the extension .npy, otherwise you will get an error.
+
+'''
+    Using Built-in Functions to Create ndarrays:
+
+    One great time-saving feature of NumPy is its ability to create ndarrays using
+     built-in functions. These functions allow us to create certain kinds of ndarrays
+     with just one line of code. Below we will see a few of the most useful built-in
+     functions for creating ndarrays that you will come across when doing AI programming.
+
+    Let's start by creating an ndarray with a specified shape that is full of zeros.
+     We can do this by using the np.zeros() function. The function np.zeros(shape)
+     creates an ndarray full of zeros with the given shape. So, for example, if you
+     wanted to create a rank 2 array with 3 rows and 4 columns, you will pass the
+     shape to the function in the form of (rows, columns), as in the example below:
+
+    Example 1. Create a Numpy array of zeros with a desired shape
+ '''
+
+# We create a 3 x 4 ndarray full of zeros.
+X = np.zeros((3,4))
+
+# We print X
+print()
+print('X = \n', X)
+print()
+
+# We print information about X
+# As we can see, the np.zeros() function creates by default an array with dtype float64.
+# If desired, the data type can be changed by using the keyword dtype.
+print('X has dimensions:', X.shape)
+print('X is an object of type:', type(X))
+print('The elements in X are of type:', X.dtype)
+
+'''
+    Similarly, we can create an ndarray with a specified shape that is full of ones.
+     We can do this by using the np.ones() function. Just like the np.zeros() function,
+     the np.ones() function takes as an argument the shape of the ndarray you want to
+     make. Let's see an example:
+
+    Example 2. Create a Numpy array of ones:
+ '''
+# We create a 3 x 2 ndarray full of ones.
+X = np.ones((3,2))
+
+# We print X
+print()
+print('X = \n', X)
+print()
+
+# We print information about X
+print('X has dimensions:', X.shape)
+print('X is an object of type:', type(X))
+print('The elements in X are of type:', X.dtype)
+
+# We create a 2 x 3 ndarray full of fives.
+X = np.full((2,3), 5)
+
+# We print X
+print()
+print('X = \n', X)
+print()
+
+# We print information about X
+print('X has dimensions:', X.shape)
+print('X is an object of type:', type(X))
+print('The elements in X are of type:', X.dtype)
+
+# We create a 5 x 5 Identity matrix.
+X = np.eye(5)
+
+# We print X
+print()
+print('X = \n', X)
+print()
+
+# We print information about X
+print('X has dimensions:', X.shape)
+print('X is an object of type:', type(X))
+print('The elements in X are of type:', X.dtype)
+
+# Create a 4 x 4 diagonal matrix that contains the numbers 10,20,30, and 50
+# on its main diagonal
+X = np.diag([10,20,30,50])
+
+# We print X
+print()
+print('X = \n', X)
+print()
+
+# We create a rank 1 ndarray that has sequential integers from 0 to 9
+x = np.arange(10)
+
+# We print the ndarray
+print()
+print('x = ', x)
+print()
+
+# We print information about the ndarray
+print('x has dimensions:', x.shape)
+print('x is an object of type:', type(x))
+print('The elements in x are of type:', x.dtype)
+
+# We create a rank 1 ndarray that has sequential integers from 4 to 9.
+x = np.arange(4,10)
+
+# We print the ndarray
+print()
+print('x = ', x)
+print()
+
+# We print information about the ndarray
+print('x has dimensions:', x.shape)
+print('x is an object of type:', type(x))
+print('The elements in x are of type:', x.dtype)
+
+# We create a rank 1 ndarray that has evenly spaced integers from 1 to 13 in steps of 3.
+x = np.arange(1,14,3)
+
+# We print the ndarray
+print()
+print('x = ', x)
+print()
+
+# We print information about the ndarray
+print('x has dimensions:', x.shape)
+print('x is an object of type:', type(x))
+print('The elements in x are of type:', x.dtype)
+
+# We create a rank 1 ndarray that has 10 integers evenly spaced between 0 and 25.
+x = np.linspace(0,25,10)
+
+# We print the ndarray
+print()
+print('x = \n', x)
+print()
+
+# We print information about the ndarray
+print('x has dimensions:', x.shape)
+print('x is an object of type:', type(x))
+print('The elements in x are of type:', x.dtype)
+
+# We create a rank 1 ndarray that has 10 integers evenly spaced between 0 and 25,
+# with 25 excluded.
+x = np.linspace(0,25,10, endpoint = False)
+
+# We print the ndarray
+print()
+print('x = ', x)
+print()
+
+# We print information about the ndarray
+print('x has dimensions:', x.shape)
+print('x is an object of type:', type(x))
+print('The elements in x are of type:', x.dtype)
+
+# We create a rank 1 ndarray with sequential integers from 0 to 19
+x = np.arange(20)
+
+# We print x
+print()
+print('Original x = ', x)
+print()
+
+# We reshape x into a 4 x 5 ndarray
+x = np.reshape(x, (4,5))
+
+# We print the reshaped x
+print()
+print('Reshaped x = \n', x)
+print()
+
+# We print information about the reshaped x
+print('x has dimensions:', x.shape)
+print('x is an object of type:', type(x))
+print('The elements in x are of type:', x.dtype)
+
+# We create a a rank 1 ndarray with sequential integers from 0 to 19 and
+# reshape it to a 4 x 5 array
+Y = np.arange(20).reshape(4, 5)
+
+# We print Y
+print()
+print('Y = \n', Y)
+print()
+
+# We print information about Y
+print('Y has dimensions:', Y.shape)
+print('Y is an object of type:', type(Y))
+print('The elements in Y are of type:', Y.dtype)
+
+# We create a rank 1 ndarray with 10 integers evenly spaced between 0 and 50,
+# with 50 excluded. We then reshape it to a 5 x 2 ndarray
+X = np.linspace(0,50,10, endpoint=False).reshape(5,2)
+
+# We print X
+print()
+print('X = \n', X)
+print()
+
+# We print information about X
+print('X has dimensions:', X.shape)
+print('X is an object of type:', type(X))
+print('The elements in X are of type:', X.dtype)
+
+# We create a 3 x 3 ndarray with random floats in the half-open interval [0.0, 1.0).
+X = np.random.random((3,3))
+
+# We print X
+print()
+print('X = \n', X)
+print()
+
+# We print information about X
+print('X has dimensions:', X.shape)
+print('X is an object of type:', type(X))
+print('The elements in x are of type:', X.dtype)
+
+# We create a 1000 x 1000 ndarray of random floats drawn from normal (Gaussian) distribution
+# with a mean of zero and a standard deviation of 0.1.
+X = np.random.normal(0, 0.1, size=(1000,1000))
+
+# We print X
+print()
+print('X = \n', X)
+print()
+
+# We print information about X
+print('X has dimensions:', X.shape)
+print('X is an object of type:', type(X))
+print('The elements in X are of type:', X.dtype)
+print('The elements in X have a mean of:', X.mean())
+print('The maximum value in X is:', X.max())
+print('The minimum value in X is:', X.min())
+print('X has', (X < 0).sum(), 'negative numbers')
+print('X has', (X > 0).sum(), 'positive numbers')
+
+# Using the Built-in functions you learned about on the
+# previous page, create a 4 x 4 ndarray that only
+# contains consecutive even numbers from 2 to 32 (inclusive)
+
+X = np.linspace(2,32,16).reshape(4,4)
+
+# We print X
+print()
+print('X = \n', X)
+print()
+
+# We create a rank 1 ndarray that contains integers from 1 to 5
+x = np.array([1, 2, 3, 4, 5])
+
+# We print x
+print()
+print('x = ', x)
+print()
+
+# Let's access some elements with positive indices
+print('This is First Element in x:', x[0])
+print('This is Second Element in x:', x[1])
+print('This is Fifth (Last) Element in x:', x[4])
+print()
+
+# Let's access the same elements with negative indices
+print('This is First Element in x:', x[-5])
+print('This is Second Element in x:', x[-4])
+print('This is Fifth (Last) Element in x:', x[-1])
+
+# We create a rank 1 ndarray that contains integers from 1 to 5
+x = np.array([1, 2, 3, 4, 5])
+
+# We print the original x
+print()
+print('Original:\n x = ', x)
+print()
+
+# We change the fourth element in x from 4 to 20
+x[3] = 20
+
+# We print x after it was modified
+print('Modified:\n x = ', x)
+
+# We create a 3 x 3 rank 2 ndarray that contains integers from 1 to 9
+X = np.array([[1,2,3],[4,5,6],[7,8,9]])
+
+# We print X
+print()
+print('X = \n', X)
+print()
+
+# Let's access some elements in X
+print('This is (0,0) Element in X:', X[0,0])
+print('This is (0,1) Element in X:', X[0,1])
+print('This is (2,2) Element in X:', X[2,2])
+
+# We create a 3 x 3 rank 2 ndarray that contains integers from 1 to 9
+X = np.array([[1,2,3],[4,5,6],[7,8,9]])
+
+# We print the original x
+print()
+print('Original:\n X = \n', X)
+print()
+
+# We change the (0,0) element in X from 1 to 20
+X[0,0] = 20
+
+# We print X after it was modified
+print('Modified:\n X = \n', X)
+
+# We create a rank 1 ndarray
+x = np.array([1, 2, 3, 4, 5])
+
+# We create a rank 2 ndarray
+Y = np.array([[1,2,3],[4,5,6],[7,8,9]])
+
+# We print x
+print()
+print('Original x = ', x)
+
+# We delete the first and last element of x
+x = np.delete(x, [0,4])
+
+# We print x with the first and last element deleted
+print()
+print('Modified x = ', x)
+
+# We print Y
+print()
+print('Original Y = \n', Y)
+
+# We delete the first row of y
+w = np.delete(Y, 0, axis=0)
+
+# We delete the first and last column of y
+v = np.delete(Y, [0,2], axis=1)
+
+# We print w
+print()
+print('w = \n', w)
+
+# We print v
+print()
+print('v = \n', v)
+
+# We create a rank 1 ndarray
+x = np.array([1, 2, 3, 4, 5])
+
+# We create a rank 2 ndarray
+Y = np.array([[1,2,3],[4,5,6]])
+
+# We print x
+print()
+print('Original x = ', x)
+
+# We append the integer 6 to x
+x = np.append(x, 6)
+
+# We print x
+print()
+print('x = ', x)
+
+# We append the integer 7 and 8 to x
+x = np.append(x, [7,8])
+
+# We print x
+print()
+print('x = ', x)
+
+# We print Y
+print()
+print('Original Y = \n', Y)
+
+# We append a new row containing 7,8,9 to y
+v = np.append(Y, [[7,8,9]], axis=0)
+
+# We append a new column containing 9 and 10 to y
+q = np.append(Y,[[9],[10]], axis=1)
+
+# We print v
+print()
+print('v = \n', v)
+
+# We print q
+print()
+print('q = \n', q)
+
+# We create a rank 1 ndarray
+x = np.array([1, 2, 5, 6, 7])
+
+# We create a rank 2 ndarray
+Y = np.array([[1,2,3],[7,8,9]])
+
+# We print x
+print()
+print('Original x = ', x)
+
+# We insert the integer 3 and 4 between 2 and 5 in x.
+x = np.insert(x,2,[3,4])
+
+# We print x with the inserted elements
+print()
+print('x = ', x)
+
+# We print Y
+print()
+print('Original Y = \n', Y)
+
+# We insert a row between the first and last row of y
+w = np.insert(Y,1,[4,5,6],axis=0)
+
+# We insert a column full of 5s between the first and second column of y
+v = np.insert(Y,1,5, axis=1)
+
+# We print w
+print()
+print('w = \n', w)
+
+# We print v
+print()
+print('v = \n', v)
+
+# We create a rank 1 ndarray
+x = np.array([1,2])
+
+# We create a rank 2 ndarray
+Y = np.array([[3,4],[5,6]])
+
+# We print x
+print()
+print('x = ', x)
+
+# We print Y
+print()
+print('Y = \n', Y)
+
+# We stack x on top of Y
+z = np.vstack((x,Y))
+
+# We stack x on the right of Y. We need to reshape x in order to stack it on the right of Y.
+w = np.hstack((Y,x.reshape(2,1)))
+
+# We print z
+print()
+print('z = \n', z)
+
+# We print w
+print()
+print('w = \n', w)
+
+'''
+    In addition to being able to access individual elements one at a time, NumPy
+     provides a way to access subsets of ndarrays. This is known as slicing.
+     Slicing is performed by combining indices with the colon : symbol inside
+     the square brackets. In general you will come across three types of slicing:
+
+    1. ndarray[start:end]
+    2. ndarray[start:]
+    3. ndarray[:end]
+
+    The first method is used to select elements between the start and end indices.
+     The second method is used to select all elements from the start index till the
+     last index. The third method is used to select all elements from the first index
+     till the end index. We should note that in methods one and three, the end index
+     is excluded. We should also note that since ndarrays can be multidimensional,
+     when doing slicing you usually have to specify a slice for each dimension of the
+     array.
+
+     # Create a 5 x 5 ndarray with consecutive integers from 1 to 25 (inclusive).
+     # Afterwards use Boolean indexing to pick out only the odd numbers in the array
+'''
+
+# Create a 5 x 5 ndarray with consecutive integers from 1 to 25 (inclusive).
+X = np.arange(1,26).reshape(5,5)
+
+# Use Boolean indexing to pick out only the odd numbers in the array
+Y = X[X % 2 != 0]
